@@ -17,11 +17,11 @@ class SampleAuthPlugin extends MantisPlugin  {
 
 		$this->version = '0.1';
 		$this->requires = array(
-			'MantisCore' => '2.3.0-dev',
+			'MantisCore' => '2.3.0',
 		);
 
-		$this->author = 'MantisBT Team';
-		$this->contact = 'mantisbt-dev@lists.sourceforge.net';
+		$this->author = 'Jimmy Murphy';
+		$this->contact = 'giga1699@gmail.com';
 		$this->url = 'https://www.mantisbt.org';
 	}
 
@@ -58,9 +58,9 @@ class SampleAuthPlugin extends MantisPlugin  {
 		$t_access_level = user_get_access_level( $t_user_id, ALL_PROJECTS );
 
 		# Have administrators use default login flow
-		if( $t_access_level >= ADMINISTRATOR ) {
+		/*if( $t_access_level >= ADMINISTRATOR ) {
 			return null;
-		}
+		}*/
 
 		# for everybody else use the custom authentication
 		$t_flags = new AuthFlags();
