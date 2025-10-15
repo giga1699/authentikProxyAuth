@@ -66,8 +66,8 @@ class authentikProxyAuthPlugin extends MantisPlugin  {
 		$t_flags = new AuthFlags();
 
 		# Passwords managed externally for all users
-		$t_flags->setCanUseStandardLogin( false );
-		$t_flags->setPasswordManagedExternallyMessage( 'Passwords are no more, you cannot change them!' );
+		$t_flags->setCanUseStandardLogin( true );
+		#$t_flags->setPasswordManagedExternallyMessage( 'Passwords are no more, you cannot change them!' );
 
 		# No one can use standard auth mechanism
 
