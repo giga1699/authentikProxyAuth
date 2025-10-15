@@ -6,6 +6,10 @@
  * Sample Auth plugin
  */
 class authentikProxyAuthPlugin extends MantisPlugin  {
+	
+	var $cmv_pages;
+	var $current_page;
+	
 	/**
 	 * A method that populates the plugin information and minimum requirements.
 	 * @return void
@@ -25,6 +29,14 @@ class authentikProxyAuthPlugin extends MantisPlugin  {
 		$this->url = 'https://wrccdc.org/';
 	}
 
+	function init() {
+		$this->cmv_pages    = array(
+			'login_page.php',
+			'login_password_page.php'
+		);
+		$this->current_page = basename( $_SERVER['PHP_SELF'] );
+	}
+
 	/**
 	 * plugin hooks
 	 * @return array
@@ -32,6 +44,7 @@ class authentikProxyAuthPlugin extends MantisPlugin  {
 	function hooks() {
 		$t_hooks = array(
 			'EVENT_AUTH_USER_FLAGS' => 'auth_user_flags',
+			'EVENT_LAYOUT_RESOURCES' => 'resources',
 		);
 
 		return $t_hooks;
@@ -83,5 +96,15 @@ class authentikProxyAuthPlugin extends MantisPlugin  {
 		$t_flags->setReauthenticationLifetime( 10 );
 
 		return $t_flags;
+	}
+
+	function resources() {
+		if (!in_array($this->current_page, $this->cmv_pages)) {
+            return '';
+        }
+
+		// stash deep link so user can access the desired page after logging in
+        $_SESSION["plugin_MantisOIDC_get_param_stash"] = $_GET;
+        print_header_redirect(plugin_page( 'login'));
 	}
 }
