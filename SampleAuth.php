@@ -5,7 +5,7 @@
 /**
  * Sample Auth plugin
  */
-class authentikProxyAuth extends MantisPlugin  {
+class authentikProxyAuthPlugin extends MantisPlugin  {
 	/**
 	 * A method that populates the plugin information and minimum requirements.
 	 * @return void
