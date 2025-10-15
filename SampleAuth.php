@@ -11,8 +11,8 @@ class authentikProxyAuthPlugin extends MantisPlugin  {
 	 * @return void
 	 */
 	function register() {
-		$this->name = plugin_lang_get( 'title' );
-		$this->description = plugin_lang_get( 'description' );
+		$this->name = 'authentikProxyAuth';
+		$this->description = 'Allows user login via authentik proxy outpost/provider';
 		$this->page = '';
 
 		$this->version = '0.1';
