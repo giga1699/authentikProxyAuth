@@ -10,13 +10,6 @@ $f_username = $_SERVER['HTTP_X_AUTHENTIK_USERNAME'];
 $f_reauthenticate = gpc_get_bool( 'reauthenticate', false );
 $f_return = gpc_get_string( 'return', config_get( 'default_home_page' ) );
 
-/*layout_login_page_begin();
-echo 'Username: ' . $f_username . "<br><br>";
-echo '<pre>'; print_r($_SERVER); echo '</pre>';
-layout_login_page_end();
-
-return false;*/
-
 $t_return = string_url( string_sanitize_url( $f_return ) );
 
 # TODO: use custom authentication method here.
@@ -48,9 +41,9 @@ if( $t_user_id == false ) {
 auth_login_user( $t_user_id );
 
 # Redirect to original page user wanted to access before authentication
-/*if( !is_blank( $t_return ) ) {
+if( !is_blank( $t_return ) ) {
 	print_header_redirect( 'login_cookie_test.php?return=' . $t_return );
-}*/
+}
 
 # If no return page, redirect to default page
 print_header_redirect( config_get( 'default_home_page' ) );
