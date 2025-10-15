@@ -6,16 +6,16 @@ require_once( 'core.php' );
 require_api( 'authentication_api.php' );
 require_api( 'user_api.php' );
 
-$f_username = $_SERVER['X-authentik-username'];
+$f_username = $_SERVER['HTTP_X_AUTHENTIK_NAME'];
 $f_reauthenticate = gpc_get_bool( 'reauthenticate', false );
 $f_return = gpc_get_string( 'return', config_get( 'default_home_page' ) );
 
-layout_login_page_begin();
+/*layout_login_page_begin();
 echo 'Username: ' . $f_username . "<br><br>";
 echo '<pre>'; print_r($_SERVER); echo '</pre>';
 layout_login_page_end();
 
-return false;
+return false;*/
 
 $t_return = string_url( string_sanitize_url( $f_return ) );
 
