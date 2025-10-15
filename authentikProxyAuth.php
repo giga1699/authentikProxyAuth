@@ -22,7 +22,7 @@ class authentikProxyAuthPlugin extends MantisPlugin  {
 
 		$this->author = 'Jimmy Murphy';
 		$this->contact = 'giga1699@gmail.com';
-		$this->url = 'https://www.mantisbt.org';
+		$this->url = 'https://wrccdc.org/';
 	}
 
 	/**
