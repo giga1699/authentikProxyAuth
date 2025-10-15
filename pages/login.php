@@ -12,7 +12,7 @@ $f_return = gpc_get_string( 'return', config_get( 'default_home_page' ) );
 
 layout_login_page_begin();
 echo 'Username: ' . $f_username . "<br><br>";
-echo $_SERVER;
+echo '<pre>'; print_r($_SERVER); echo '</pre>';
 layout_login_page_end();
 
 return false;
