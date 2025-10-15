@@ -72,7 +72,7 @@ class authentikProxyAuthPlugin extends MantisPlugin  {
 		# No one can use standard auth mechanism
 
 		# Override Login page and Logout Redirect
-		$t_flags->setCredentialsPage( helper_url_combine( plugin_page( 'login', /* redirect */ true ) ) );
+		# $t_flags->setCredentialsPage( helper_url_combine( plugin_page( 'login', /* redirect */ true ), 'username=' . $t_username) );
 		# $t_flags->setLogoutRedirectPage( plugin_page( 'logout', /* redirect */ true ) );
 
 		# No long term session for identity provider to be able to kick users out.
