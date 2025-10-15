@@ -6,7 +6,7 @@ require_once( 'core.php' );
 require_api( 'authentication_api.php' );
 require_api( 'user_api.php' );
 
-$f_username = $_SERVER['HTTP_X_AUTHENTIK_NAME'];
+$f_username = $_SERVER['HTTP_X_AUTHENTIK_USERNAME'];
 $f_reauthenticate = gpc_get_bool( 'reauthenticate', false );
 $f_return = gpc_get_string( 'return', config_get( 'default_home_page' ) );
 
