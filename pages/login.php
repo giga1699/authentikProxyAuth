@@ -11,8 +11,8 @@ $f_reauthenticate = gpc_get_bool( 'reauthenticate', false );
 $f_return = gpc_get_string( 'return', config_get( 'default_home_page' ) );
 
 layout_login_page_begin();
-echo 'Username: $f_username';
-echo '$_SERVER';
+echo 'Username: ' . $f_username . "<br><br>";
+echo $_SERVER;
 layout_login_page_end();
 
 return false;
